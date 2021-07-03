@@ -1,0 +1,22 @@
+import styled from 'styled-components';
+
+export const Container = styled.div`
+
+  position: relative;
+  width: var(--loader-width, 100px);
+  height: var(--loader-height, 100px);
+  border-radius: 50%;
+  border: var(--line-width, 4px) solid var(--loader-color-primary, #33f);
+  &:before{
+    content: '';
+    position: absolute;
+    top: 8px;    
+    left: calc(50% - 2px);
+    background: var(--loader-color-primary, #33f);
+    width: var(--line-width, 4px);
+    height: calc( 50% - 8px );
+    border-radius: calc(var(--line-width, 4px) + 1);
+    transform-origin: 50% 100%;
+    animation: circle-loader var(--animation-duration,1s) infinite linear ;
+  }
+`;
